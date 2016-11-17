@@ -11,6 +11,18 @@ type Projects []string
 
 var listprojects Projects
 
+// test de fred
+type API struct {
+	client *ovh.Client
+}
+
+func (a *API) GetProjects() (projects Projects, err error) {
+	err = a.client.Get("/cloud/project", &projects)
+	return projects, err
+}
+
+// fin de test de fred
+
 func listProjects() {
 
 	client, err := ovh.NewEndpointClient("ovh-eu")
