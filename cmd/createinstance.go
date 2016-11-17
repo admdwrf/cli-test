@@ -28,7 +28,13 @@ to quickly create a Cobra application.`,
 
 func init() {
 	RootCmd.AddCommand(createinstanceCmd)
-	createinstanceCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+	createinstanceCmd.Flags().BoolP("project", "", false, "OVH Cloud Project Name, required=True")
+	createinstanceCmd.Flags().BoolP("name", "", false, "OVH Cloud VM Instance Name, default=test0")
+	createinstanceCmd.Flags().BoolP("region", "", false, "OVH Cloud Region, default=SBG1")
+	createinstanceCmd.Flags().BoolP("image", "", false, "OVH Cloud OS Image, default=Ubuntu 16.04")
+	createinstanceCmd.Flags().BoolP("flavor", "", false, "OVH Cloud Machine Type, default=vps-ssd-1")
+	createinstanceCmd.Flags().BoolP("ssh-key", "", false, "OVH Cloud SSH Key Name, required=True")
+
 	// Here you will define your flags and configuration settings.
 
 	// Cobra supports Persistent Flags which will work for this command
